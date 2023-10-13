@@ -31,7 +31,7 @@ class HTTPResponse(object):
     def __init__(self, code=200, body=""):
         self.code = code
         self.body = body
-        print(str(self.code)+'\n'+self.body)
+        # print(str(self.code)+'\n'+self.body)
 
 class HTTPClient(object):
     '''
