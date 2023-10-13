@@ -31,7 +31,7 @@ class HTTPResponse(object):
     def __init__(self, code=200, body=""):
         self.code = code
         self.body = body
-        # print(str(self.code)+'\n'+self.body)
+        print(str(self.code)+'\n'+self.body)
 
 class HTTPClient(object):
     '''
@@ -120,7 +120,7 @@ class HTTPClient(object):
 
         self.sendall(request)
 
-        try: # encoding/decoding errors (ex. http://google.com/)
+        try: # decoding errors (ex. http://www.google.com/)
             response = self.recvall(self.socket)
             code = self.get_code(response)
             body = self.get_body(response)
@@ -151,7 +151,7 @@ class HTTPClient(object):
 
         self.sendall(request)
 
-        try: # encoding/decoding errors (ex. http://google.com/)
+        try: # decoding errors (ex. http://www.google.com/)
             response = self.recvall(self.socket)
             code = self.get_code(response)
             body = self.get_body(response)
